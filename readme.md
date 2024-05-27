@@ -6,7 +6,7 @@
 
 - [Data Structures](./Data%20Structures/)
   - [Linked Lists](./Data%20Structures/Linked_Lists/)
-
+  - [Arrays](./Data%20Structures/Arrays/)
 - [Algorithms](./Algorithms/)
     
 
