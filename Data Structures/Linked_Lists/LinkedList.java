@@ -39,36 +39,63 @@ public class LinkedList {
         System.out.println("Length=" + length);
     }
 
-    public void append(int value){
-        Node newNode= new Node(value);
-        if(length==0){
+    public void append(int value) { // append method
+        Node newNode = new Node(value);
+        if (length == 0) {
             head = newNode;
             tail = newNode;
-            length =1;
-        }
-        else{
+            length = 1;
+        } else {
             tail.next = newNode;
             tail = newNode;
         }
         length++;
     }
-    public Node removeLast(){
-        if(length==0){
+
+    public Node removeLast() { // remove_last method
+        if (length == 0) {
             return null;
-        }
-        else{
-            Node temp =head;
+        } else {
+            Node temp = head;
             Node pre = head;
-            while (temp.next!=null) {
+            while (temp.next != null) {
                 pre = temp;
                 temp = temp.next;
             }
             tail = pre;
-            tail.next= null;
+            tail.next = null;
             length--;
-            if(length==0){
-                head=null;
-                tail=null;
+            if (length == 0) {
+                head = null;
+                tail = null;
+            }
+            return temp;
+        }
+    }
+
+    public void prepend(int value) { // prepend method
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
+    public Node removeFirst() { // removeFirst method
+        if (length == 0) {
+            return null;
+        } else {
+            Node temp = head;
+            head = temp.next;
+            temp.next = null;
+            length--;
+            if (length == 0) {
+                head = null;
+                tail = null;
             }
             return temp;
         }
