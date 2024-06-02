@@ -100,4 +100,25 @@ public class LinkedList {
             return temp;
         }
     }
+
+    public Node get(int index) { // get method
+        if (index < 0 || index >= length) {
+            return null;
+        }
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    public boolean set(int index, int value) { // set method
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
